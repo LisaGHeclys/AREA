@@ -1,0 +1,242 @@
+@import '../../scss/_vars.scss';
+
+.homepage {
+    width: 100%;
+    height: 100%;
+
+    background-color: $bg-white-theme;
+    display: flex;
+    flex-direction: column;
+
+    .firstPart {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        margin: 100px 0 150px 20px;
+
+        @media screen and (max-width: 1200px) {
+            align-items: center;
+            margin-top: 137px;
+        }
+        .img1 {
+            z-index: 2;
+            @media screen and (max-width: 1200px) {
+                display: none;
+            }
+        }
+        .img_vector1 {
+            width: 600px;
+            height: 200px;
+            display: flex;
+            top: 480px;
+            left: 80px;
+            z-index: 7;
+            position: absolute;
+            user-select: none;
+            @media screen and (max-width: 1200px) {
+                display: none;
+            }
+        }
+        .img_vector2 {
+            width: 600px;
+            height: 200px;
+            display: flex;
+            position: absolute;
+            right: 0px;
+            top: 580px;
+            user-select: none;
+            z-index: 7;
+            @media screen and (max-width: 1200px) {
+                top: 400px;
+            }
+        }
+        .firstPartTexts {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+
+            .mainText {
+                @media screen and (max-width: 1200px) {
+                    left: auto;
+                }
+                font-family: $font-family;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 37px;
+                line-height: 43px;
+                text-align: center;
+                margin: 22px;
+                color: $text-white-theme;
+            }
+            .secondaryText {
+                @media screen and (max-width: 1200px) {
+                    left: auto;
+                }
+                font-family: $font-family;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 21px;
+                text-align: center;
+
+                margin: 22px;
+
+                color: $text-white-theme;
+            }
+        }
+    }
+    .secondPart {
+        width: 100%;
+        height: 700px;
+        background: rgba(34, 37, 37, 0.1);
+        z-index: 2;
+
+        .img2 {
+            position: relative;
+            left: 60%;
+            top: 100px;
+
+            width: 552px;
+            height: 513px;
+            @media screen and (max-width: 1200px) {
+                display: none;
+            }
+        }
+        .img_vector3 {
+            width: 900px;
+            height: 200px;
+            position: absolute;
+            left: 0px;
+            top: 800px;
+            @media screen and (max-width: 1200px) {
+                width: 700px;
+            }
+        }
+        .img_vector4 {
+            width: 500px;
+            height: 180px;
+            position: absolute;
+            top: 1345px;
+            left: 800px;
+
+            @media screen and (max-width: 1200px) {
+                display: none;
+            }
+        }
+
+        .thirdText {
+            position: absolute;
+            top: 1040px;
+            left: 10%;
+            width: auto;
+            height: auto;
+
+            font-family: $font-family;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 37px;
+            line-height: 43px;
+
+            color: $text-white-theme;
+            z-index: 4;
+        }
+        .fourthText {
+            position: absolute;
+            top: 1180px;
+            left: 15%;
+
+            font-family: $font-family;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+
+            color: $text-white-theme;
+        }
+    }
+    .thirdPart {
+        width: 100%;
+        height: 800px;
+        @media screen and (max-width: 1200px) {
+            height: 600px;
+        }
+
+        .fifthText {
+            @media screen and (max-width: 1200px) {
+                left: 30%;
+                top: 1500px;
+            }
+            position: absolute;
+            left: 60%;
+            top: 1800px;
+
+            font-family: $font-family;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 37px;
+            line-height: 43px;
+            text-align: center;
+
+            color: $text-white-theme;
+        }
+        .ifThen_vector {
+            position: absolute;
+            top: 2000px;
+            left: 62.5%;
+            @media screen and (max-width: 1200px) {
+                left: 32%;
+                top: 1700px;
+            }
+        }
+
+        .img3 {
+            position: absolute;
+            width: 613px;
+            height: 483px;
+            left: 5%;
+            top: 1700px;
+            @media screen and (max-width: 1200px) {
+                display: none;
+            }
+        }
+        .img_vector5 {
+            width: 1150px;
+            height: 180px;
+            position: absolute;
+            top: 1500px;
+            left: 800px;
+            @media screen and (max-width: 1200px) {
+                top: 1300px;
+                left: 200px;
+            }
+        }
+        .vector_break {
+            position: absolute;
+            top: 2100px;
+            right: 0;
+            width: 100%;
+            @media screen and (max-width: 1200px) {
+                top: 1800px;
+            }
+        }
+    }
+}
+
+.loginBack {
+    position: absolute;
+    bottom: 24px;
+    left: 0px;
+    z-index: 0;
+    user-select: none;
+}
+
+.loginBackFiles {
+    position: absolute;
+    top: 48px;
+    right: 96px;
+    z-index: 0;
+    user-select: none;
+}

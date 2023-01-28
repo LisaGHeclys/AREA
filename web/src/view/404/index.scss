@@ -1,0 +1,160 @@
+@import '../../scss/_vars.scss';
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: calc(100vh - 140px);
+    text-align: center;
+    user-select: none;
+
+    h1 {
+        font-family: $font-family;
+        font-weight: lighter;
+    }
+
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .froggy {
+            height: 90px;
+            width: 100px;
+            background-color: #69da6b;
+            border-radius: 10px;
+            z-index: 2;
+        }
+
+        .froggy-head .left-eye,
+        .right-eye {
+            height: 30px;
+            width: 30px;
+            background-color: #69da6b;
+            border-radius: 50% 50% 0 0;
+            position: absolute;
+        }
+
+        .left-eye {
+            top: -15px;
+            left: 0px;
+
+            .left-sclera {
+                height: 20px;
+                width: 20px;
+                background-color: $white;
+                border-radius: 50%;
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                animation: infinite blink 5000ms ease-out;
+            }
+
+            .left-pupil {
+                height: 12px;
+                width: 12px;
+                background-color: $black;
+                border-radius: 50%;
+                position: absolute;
+                top: 7px;
+                left: 11px;
+                animation: infinite blink 5000ms ease-out;
+            }
+        }
+
+        .right-eye {
+            top: -15px;
+            right: 0px;
+
+            .right-sclera {
+                height: 20px;
+                width: 20px;
+                background-color: $white;
+                border-radius: 50%;
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                animation: infinite blink 5000ms ease-out;
+            }
+
+            .right-pupil {
+                height: 12px;
+                width: 12px;
+                background-color: $black;
+                border-radius: 50%;
+                position: absolute;
+                top: 7px;
+                left: 7px;
+                animation: infinite blink 5000ms ease-out;
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                transform: rotateX(0);
+            }
+            94% {
+                transform: rotateX(0);
+            }
+            98% {
+                transform: rotateX(90deg);
+            }
+        }
+
+        .froggy-body {
+            height: 50px;
+            width: 80%;
+            background-color: #77f87a;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+        }
+
+        .left-leg::after,
+        .right-leg::after {
+            content: '';
+            width: 50px;
+            height: 10px;
+            background: #4cc24f;
+            position: absolute;
+            bottom: 0;
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .left-leg::after {
+            left: -25px;
+        }
+
+        .right-leg::after {
+            right: -25px;
+        }
+
+        .left-leg::before,
+        .right-leg::before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: #4cc24f;
+            bottom: 0;
+            border-radius: 10px;
+            z-index: -1;
+            clip-path: ellipse(25% 40% at 50% 50%);
+        }
+
+        .left-leg::before {
+            left: -40px;
+            transform: rotate(-25deg);
+        }
+
+        .right-leg::before {
+            right: -40px;
+            transform: rotate(25deg);
+        }
+    }
+}

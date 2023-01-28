@@ -1,0 +1,15 @@
+{
+    "short_name": "Area",
+    "name": "Epitech Project Area",
+    "icons": [
+        {
+            "src": "../src/assets/Logo.svg",
+            "sizes": "211x212",
+            "type": "svg"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+}

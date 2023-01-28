@@ -1,0 +1,80 @@
+@import '_vars.scss';
+
+.card {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px rgba($color: $black, $alpha: 0.6) solid;
+    position: relative;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    transition: 0.1s ease-in height, 0.1s ease-in width;
+    padding: 0px 0px 40px 0px;
+
+    &:hover {
+        transform: scale(1.01);
+        border: 1px rgba($color: $black, $alpha: 1) solid;
+        transition: 0.1s ease-in;
+        box-shadow: 6px 6px 2px 1px rgba(34, 37, 37, 0.1);
+    }
+    .card-image {
+        padding-top: 12px;
+        position: relative;
+        user-select: none;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        text-align: center;
+    }
+    .card-content {
+        align-self: center;
+    }
+    .card-title {
+        align-self: center;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-description {
+        align-self: center;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 6px;
+    }
+
+    .card-button {
+        background-color: $links-white-theme;
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        position: absolute;
+        left: 40%;
+        bottom: 6px;
+
+        @media screen and (max-width: 1280px) {
+            left: 32%;
+        }
+        &:hover {
+            background-color: rgba($color: $black, $alpha: 1);
+            transition-duration: 0.4s;
+        }
+    }
+
+    .card-button-subbed {
+        background-color: $design-white-theme;
+
+        &:hover {
+            background-color: red;
+            transition-duration: 0.4s;
+        }
+    }
+}

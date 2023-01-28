@@ -1,0 +1,40 @@
+version: '2.1'
+services:
+    web:
+        build: ./web
+        volumes:
+            - type: volume
+              source: shared-volume
+              target: /area
+        depends_on:
+            mobile:
+                condition: service_completed_successfully
+            server:
+                condition: service_healthy
+        env_file: ./web/.env
+        ports:
+            - '8081:8081'
+    server:
+        build: ./server
+        restart: on-failure
+        healthcheck:
+            test: curl --fail http://localhost:8080 || exit 1
+            interval: 60s
+            retries: 5
+            start_period: 20s
+            timeout: 10s
+        depends_on:
+            mobile:
+                condition: service_completed_successfully
+        env_file: ./server/.env
+        ports:
+            - '8080:8080'
+    mobile:
+        build: ./mobile
+        volumes:
+            - type: volume
+              source: shared-volume
+              target: /area
+
+volumes:
+    shared-volume:

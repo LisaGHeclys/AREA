@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  ID Int @id @default(autoincrement())
+  customToken String
+  email String
+  password String
+  Providers Provider[]
+  Area Area[]
+  googleID String? @default("null")
+  services String @default("")
+}
+
+model Provider {
+  ID Int @id @default(autoincrement())
+  user User @relation(fields: [userID], references: [ID])
+  userID Int
+  Name String
+  accessToken String
+  refreshToken String
+}
+
+model Area {
+  ID Int @id @default(autoincrement())
+  user User @relation(fields: [userID], references: [ID])
+  userID Int
+  name String
+  actionID Int
+  reactionID Int
+  parameters String? @default("{}")
+}
+
+model Actions {
+  ID Int @id @default(autoincrement())
+  name String
+  description String
+  serviceID Int
+  service Service @relation(fields: [serviceID], references: [ID])
+}
+
+model Reactions {
+  ID Int @id @default(autoincrement())
+  name String
+  description String
+  serviceID Int
+  service Service @relation(fields: [serviceID], references: [ID])
+}
+
+model Service {
+  ID Int @id @default(autoincrement())
+  name String
+  actions Actions[]
+  reactions Reactions[]
+}

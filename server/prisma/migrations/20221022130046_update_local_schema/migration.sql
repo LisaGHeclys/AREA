@@ -1,0 +1,22 @@
+-- CreateTable
+CREATE TABLE "Actions" (
+    "ID" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "serviceID" INTEGER NOT NULL,
+    CONSTRAINT "Actions_serviceID_fkey" FOREIGN KEY ("serviceID") REFERENCES "Service" ("ID") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Reactions" (
+    "ID" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "serviceID" INTEGER NOT NULL,
+    CONSTRAINT "Reactions_serviceID_fkey" FOREIGN KEY ("serviceID") REFERENCES "Service" ("ID") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Service" (
+    "ID" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+);
